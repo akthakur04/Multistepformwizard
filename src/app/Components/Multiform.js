@@ -1,15 +1,12 @@
 "use client"; // Mark this component as a client component
-
 import React, { useState } from "react";
 import { Step1 } from "./step1";
 import { Step2 } from "./step2";
 import { Step3 } from "./step3";
 import { Success } from "./success";
 import styles from "./MultiStepForm.css";
-
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
-
   const [formData, setFormData] = useState({
     email: "",
     userName: "",
@@ -17,14 +14,12 @@ const MultiStepForm = () => {
     confirmPassword: "",
     firstname: "",
     lastname: "",
-    phone:"",
+    phone: "",
     image1: null,
     image2: null,
   });
-
   const nextStep = () => setCurrentStep((prev) => prev + 1);
   const prevStep = () => setCurrentStep((prev) => prev - 1);
-
   const updateFormData = (newData) => {
     setFormData((prev) => ({
       ...prev,
@@ -45,7 +40,9 @@ const MultiStepForm = () => {
       <div className="row justify-content-center">
         <div className="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
           <div className="card px-0 pt-4 pb-0 mt-3 mb-3">
-            <h2 id="heading" style={{marginBottom:"50px"}}>Sign Up Your User Account</h2>
+            <h2 id="heading" style={{ marginBottom: "50px" }}>
+              Sign Up Your User Account
+            </h2>
             {currentStep !== 4 && <p>Fill all form field to go to next step</p>}
             <form id="msform">
               <ul id="progressbar">
@@ -55,7 +52,10 @@ const MultiStepForm = () => {
                 <li className={currentStep >= 2 ? "active" : ""} id="personal">
                   <strong>Personal</strong>
                 </li>
-                <li className={currentStep >= 3 ? "active" : ""} id="PhotoVerify">
+                <li
+                  className={currentStep >= 3 ? "active" : ""}
+                  id="PhotoVerify"
+                >
                   <strong>Image</strong>
                 </li>
                 <li className={currentStep >= 4 ? "active" : ""} id="confirm">

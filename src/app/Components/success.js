@@ -6,7 +6,7 @@ export const Success = ({ formData, prevStep }) => {
     <fieldset>
       <div className="form-card">
         <div className="row">
-        <div className="col-5">
+          <div className="col-5">
             <h6 className="steps">Step 4 - 4</h6>
           </div>
 
@@ -25,9 +25,9 @@ export const Success = ({ formData, prevStep }) => {
             // marginBottom={3}
             sx={{
               fontSize: "100px",
-              padding:1,
+              padding: 1,
 
-              marginBottom:3,
+              marginBottom: 3,
               textAlign: "center",
               cursor: "pointer",
               color: "green",
@@ -37,7 +37,17 @@ export const Success = ({ formData, prevStep }) => {
         <h2 className="purple-text text-center">
           <strong>Registration Completed Successfully!</strong>
         </h2>
-        <div className="row justify-content-center">
+        <Box
+        padding={3}
+          sx={{
+            boxSizing: "border-box",
+            boxShadow: "0px 2px 4px rgb(224,224,224)",
+            borderRadius: "4px",
+            border: "0.8px solid rgb(224,224,224)",
+          }}
+          marginTop={3}
+          className="row justify-content-center"
+        >
           <div className="col-7 text-center">
             <h4 className="purple-text text-center">Summary</h4>
             <p>Email: {formData.email}</p>
@@ -45,9 +55,8 @@ export const Success = ({ formData, prevStep }) => {
             <p>First Name: {formData.firstName}</p>
             <p>Last Name: {formData.lastName}</p>
             <p>Phone: {formData.phone}</p>
-            {/* <p>Address: {formData.address}</p> */}
           </div>
-        </div>
+        </Box>
       </div>
       {/* <input
         type="button"
