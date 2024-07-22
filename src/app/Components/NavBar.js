@@ -23,7 +23,7 @@ function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Box
         border={"1px solid black"}
         sx={{

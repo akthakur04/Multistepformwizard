@@ -105,5 +105,23 @@ a {
     color-scheme: dark;
   }
 }
+:root {
+  --input-bg-color: white;
+  --input-text-color: rgb(0,0,12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --input-bg-color: white;
+    --input-text-color: rgb(0,0,12);
+  }
+}
+
+/* Apply styles only to input fields that are not buttons */
+input:not([type="button"]) {
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+}
+
 
 

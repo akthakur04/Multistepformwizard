@@ -5,7 +5,9 @@ export const Step1 = ({ nextStep, prevStep, formData, updateFormData }) => {
   const [email, setEmail] = useState(formData.email || "");
   const [userName, setUserName] = useState(formData.userName || "");
   const [password, setPassword] = useState(formData.password || "");
-  const [confirmPassword, setConfirmPassword] = useState(formData.confirmPassword || "");
+  const [confirmPassword, setConfirmPassword] = useState(
+    formData.confirmPassword || ""
+  );
   const [emailError, setEmailError] = useState("");
   const [nameError, setNameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
@@ -94,10 +96,26 @@ export const Step1 = ({ nextStep, prevStep, formData, updateFormData }) => {
             <h2 className="steps">Step 1 - 4</h2>
           </div>
         </div>
-        <Tooltip title={emailError} open={Boolean(emailError)} placement="top">
-          
+        <Tooltip
+          title={emailError}
+          open={Boolean(emailError)}
+          placement="bottom"
+          arrow
+          PopperProps={{
+            sx: {
+              "& .MuiTooltip-tooltip": {
+                fontSize: "13px",
+                color: "white",
+              },
+            },
+          }}
+        >
           <label className="fieldlabels">Email: *</label>
           <input
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
             type="email"
             name="email"
             placeholder="Email Id"
@@ -106,9 +124,26 @@ export const Step1 = ({ nextStep, prevStep, formData, updateFormData }) => {
             onBlur={handleEmailBlur}
           />
         </Tooltip>
-        <Tooltip title={nameError} open={Boolean(nameError)} placement="top">
+        <Tooltip
+          title={nameError}
+          open={Boolean(nameError)}
+          placement="bottom"
+          arrow
+          PopperProps={{
+            sx: {
+              "& .MuiTooltip-tooltip": {
+                fontSize: "13px",
+                color: "white",
+              },
+            },
+          }}
+        >
           <label className="fieldlabels">Username: *</label>
           <input
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
             type="text"
             name="uname"
             placeholder="UserName"
@@ -116,9 +151,26 @@ export const Step1 = ({ nextStep, prevStep, formData, updateFormData }) => {
             onChange={handleUserChange}
           />
         </Tooltip>
-        <Tooltip title={passwordError} open={Boolean(passwordError)} placement="top">
+        <Tooltip
+          title={passwordError}
+          open={Boolean(passwordError)}
+          placement="bottom"
+          arrow
+          PopperProps={{
+            sx: {
+              "& .MuiTooltip-tooltip": {
+                fontSize: "13px",
+                color: "white",
+              },
+            },
+          }}
+        >
           <label className="fieldlabels">Password: *</label>
           <input
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
             type="password"
             name="pwd"
             placeholder="Password"
@@ -127,9 +179,26 @@ export const Step1 = ({ nextStep, prevStep, formData, updateFormData }) => {
             onBlur={handlePasswordBlur}
           />
         </Tooltip>
-        <Tooltip title={passwordError} open={Boolean(passwordError)} placement="top">
+        <Tooltip
+          title={passwordError}
+          open={Boolean(passwordError)}
+          placement="bottom"
+          arrow
+          PopperProps={{
+            sx: {
+              "& .MuiTooltip-tooltip": {
+                fontSize: "13px",
+                color: "white",
+              },
+            },
+          }}
+        >
           <label className="fieldlabels">Confirm Password: *</label>
           <input
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
             type="password"
             name="cpwd"
             placeholder="Confirm Password"
@@ -140,6 +209,10 @@ export const Step1 = ({ nextStep, prevStep, formData, updateFormData }) => {
         </Tooltip>
       </div>
       <input
+        // style={{
+        //   backgroundColor: "white",
+        //   color: "black",
+        // }}
         type="button"
         name="next"
         className="next action-button"

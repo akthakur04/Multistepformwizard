@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Tooltip from "@mui/material/Tooltip";
 
-export const Step2 = ({ nextStep, prevStep,formData,updateFormData }) => {
-  const [firstName, setFirstName] = useState(formData.firstName||"");
-  const [lastName, setLastName] = useState(formData.lastName||"");
+export const Step2 = ({ nextStep, prevStep, formData, updateFormData }) => {
+  const [firstName, setFirstName] = useState(formData.firstName || "");
+  const [lastName, setLastName] = useState(formData.lastName || "");
   const [firstNameError, setFirstNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
-  const [phone, setPhone] = useState(formData.phone||"");
+  const [phone, setPhone] = useState(formData.phone || "");
   const [phoneError, setPhoneError] = useState("");
 
   const handleFirstNameChange = (e) => {
@@ -96,9 +96,17 @@ export const Step2 = ({ nextStep, prevStep,formData,updateFormData }) => {
             <h2 className="steps">Step 2 - 4</h2>
           </div>
         </div>
-        <Tooltip title={firstNameError} open={Boolean(firstNameError)} placement="top">
+        <Tooltip
+          title={firstNameError}
+          open={Boolean(firstNameError)}
+          placement="top"
+        >
           <label className="fieldlabels">First Name: *</label>
           <input
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
             type="text"
             name="firstName"
             placeholder="First Name"
@@ -107,9 +115,17 @@ export const Step2 = ({ nextStep, prevStep,formData,updateFormData }) => {
             onBlur={handleFirstNameBlur}
           />
         </Tooltip>
-        <Tooltip title={lastNameError} open={Boolean(lastNameError)} placement="top">
+        <Tooltip
+          title={lastNameError}
+          open={Boolean(lastNameError)}
+          placement="top"
+        >
           <label className="fieldlabels">Last Name: *</label>
           <input
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
             type="text"
             name="lastName"
             placeholder="Last Name"
@@ -118,9 +134,25 @@ export const Step2 = ({ nextStep, prevStep,formData,updateFormData }) => {
             onBlur={handleLastNameBlur}
           />
         </Tooltip>
-        <Tooltip title={phoneError} open={Boolean(phoneError)} placement="top">
+        <Tooltip
+          PopperProps={{
+            sx: {
+              "& .MuiTooltip-tooltip": {
+                fontSize: "13px",
+                color: "white",
+              },
+            },
+          }}
+          title={phoneError}
+          open={Boolean(phoneError)}
+          placement="top"
+        >
           <label className="fieldlabels">Phone Number: *</label>
           <input
+            style={{
+              backgroundColor: "white",
+              color: "black",
+            }}
             type="text"
             name="phone"
             placeholder="Phone Number"
@@ -131,6 +163,10 @@ export const Step2 = ({ nextStep, prevStep,formData,updateFormData }) => {
         </Tooltip>
       </div>
       <input
+        // style={{
+        //   backgroundColor: "white",
+        //   color: "black",
+        // }}
         type="button"
         name="next"
         className="next action-button"
@@ -139,6 +175,10 @@ export const Step2 = ({ nextStep, prevStep,formData,updateFormData }) => {
       />
 
       <input
+        // style={{
+        //   backgroundColor: "white",
+        //   color: "black",
+        // }}
         type="button"
         name="prev"
         className="previous action-button-previous"
@@ -148,4 +188,3 @@ export const Step2 = ({ nextStep, prevStep,formData,updateFormData }) => {
     </fieldset>
   );
 };
-

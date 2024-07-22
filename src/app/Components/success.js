@@ -49,7 +49,7 @@ export const Success = ({ formData, prevStep }) => {
           className="row justify-content-center"
         >
           <div className="col-7 text-center">
-            <h4 className="purple-text text-center">Summary</h4>
+            <h4 className="purple-text text-center" style={{color:"rgb(0,0,12)"}}>Summary</h4>
             <p>Email: {formData.email}</p>
             <p>Username: {formData.userName}</p>
             <p>First Name: {formData.firstName}</p>
@@ -58,13 +58,6 @@ export const Success = ({ formData, prevStep }) => {
           </div>
         </Box>
       </div>
-      {/* <input
-        type="button"
-        name="previous"
-        className="previous action-button-previous"
-        value="Previous"
-        onClick={prevStep}
-      /> */}
     </fieldset>
   );
 };

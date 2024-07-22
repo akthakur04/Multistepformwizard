@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export const Step3 = ({ nextStep, prevStep, formData, updateFormData }) => {
-  const [image1, setImage1] = useState(formData.image1||null);
-  const [image2, setImage2] = useState(formData.image2||null);
+  const [image1, setImage1] = useState(formData.image1 || null);
+  const [image2, setImage2] = useState(formData.image2 || null);
 
   useEffect(() => {
     updateFormData({ image1, image2 });
@@ -15,19 +15,16 @@ export const Step3 = ({ nextStep, prevStep, formData, updateFormData }) => {
     } else {
       setImage(file);
     }
-    
   };
   const handleNextClick = () => {
     // Check if the form is valid
-    if (image1 == null || image2==null) {
+    if (image1 == null || image2 == null) {
       window.alert("Please fill all the marked * fields.");
     }
-    // Check if there are any errors
     else {
-        nextStep();
+      nextStep();
     }
   };
-
 
   return (
     <fieldset>
@@ -42,6 +39,10 @@ export const Step3 = ({ nextStep, prevStep, formData, updateFormData }) => {
         </div>
         <label className="fieldlabels">Upload Your Photo:</label>
         <input
+          style={{
+            backgroundColor: "white",
+            color: "black",
+          }}
           type="file"
           name="pic1"
           accept="image/*"
@@ -49,7 +50,11 @@ export const Step3 = ({ nextStep, prevStep, formData, updateFormData }) => {
         />
         <label className="fieldlabels">Upload Signature Photo:</label>
         <input
-          type="file"
+          style={{
+            backgroundColor: "var(--input-bg-color)",
+            color: "var(--input-text-color)",
+          }}
+                    type="file"
           name="pic2"
           accept="image/*"
           onChange={(e) => handleImageChange(e, setImage2)}
@@ -63,6 +68,10 @@ export const Step3 = ({ nextStep, prevStep, formData, updateFormData }) => {
         onClick={handleNextClick} // Handle next step click
       />
       <input
+        // style={{
+        //   backgroundColor: "white",
+        //   color: "black",
+        // }}
         type="button"
         name="previous"
         className="previous action-button-previous"
